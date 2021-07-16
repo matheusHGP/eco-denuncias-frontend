@@ -1,0 +1,53 @@
+.pagination {
+  margin-right: 5px;
+  margin-top: 6px;
+}
+
+.pagination > .active > a {
+  background-color: #0062cc;
+  border: 1px solid black !important;
+  color: black !important;
+}
+
+.pagination > li > a {
+  border: 1px solid black !important;
+  padding: 4px 10px;
+  border-radius: 5px !important;
+  outline: none;
+  cursor: pointer;
+  margin: 0px 5px 0px 5px;
+  color: black !important;
+}
+
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  background-color: #0062cc;
+  border-color: black !important;
+  outline: none;
+}
+
+.pagination > li > a,
+.pagination > li > span {
+  color: black;
+  font-weight: bold;
+}
+
+.pagination > li:first-child > a,
+.pagination > li:first-child > span,
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+  border-radius: unset;
+}
+
+.pageSize {
+  color: 0062cc !important;
+  width: 120px !important;
+  height: 40px !important;
+  border-radius: 10px !important;
+  margin-right: 15px;
+  border-color: black !important;
+}

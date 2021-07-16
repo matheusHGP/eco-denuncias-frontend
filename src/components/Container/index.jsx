@@ -8,6 +8,8 @@ import {
   NavLink,
   NavbarBrand,
   Container,
+  Row,
+  Col,
 } from "reactstrap";
 
 import RoutesPath from "../../routes/routesPath";
@@ -28,7 +30,10 @@ const Navigation = () => {
   return (
     <>
       <Navbar expand="md" className={"background-color-custom navbar-custom"}>
-        <NavbarBrand style={{ color: "white", fontWeight: "bold" }} href="/home">
+        <NavbarBrand
+          style={{ color: "white", fontWeight: "bold" }}
+          href="/home"
+        >
           Painel de Controle
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
@@ -40,14 +45,6 @@ const Navigation = () => {
                 href="/home"
               >
                 Início
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink
-                style={{ color: "white", fontWeight: "bold" }}
-                href="/dashboard"
-              >
-                Dashboard
               </NavLink>
             </NavItem>
             <NavItem>
@@ -106,6 +103,14 @@ const CustomContainer = () => {
           <Container>
             <RoutesPath />
           </Container>
+          <Row>
+            <Col>
+              <p>
+                Sistema de controle de ocorrencias do meio ambiente, habitação e
+                urbanismo.
+              </p>
+            </Col>
+          </Row>
         </CustomContainerComponent>
       </div>
     </>

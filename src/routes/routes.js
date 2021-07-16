@@ -1,4 +1,6 @@
 import Home from "../containers/home";
+import Users from "../containers/users";
+import Reports from "../containers/reports";
 
 const routes = [
   {
@@ -7,15 +9,11 @@ const routes = [
   },
   {
     path: "/usuarios",
-    component: Home,
+    component: Users,
   },
   {
     path: "/denuncias",
-    component: Home,
-  },
-  {
-    path: "/dashboard",
-    component: Home,
+    component: Reports,
   },
 ];
 

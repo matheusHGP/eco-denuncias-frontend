@@ -30,7 +30,7 @@ const App = () => {
         <Switch>
           <Route exact path="/login" component={Login} />
           <PrivateRoute />
-          <Redirect to="/home" />
+          <Redirect exact from="/" to="/home" />
         </Switch>
       </Router>
     </>
