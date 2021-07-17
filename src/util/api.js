@@ -59,16 +59,14 @@ function getConfigs(params) {
 }
 
 function handleError(error) {
-  const messages = error?.response?.data?.messages;
+  const message = error?.response?.data?.message;
 
-  if (!messages) {
+  if (!message) {
     notifyError("Não foi possível realizar a ação.");
     return;
   }
 
-  messages.forEach((msg) => {
-    notifyError(msg);
-  });
+  notifyError(message);
 }
 
 export default api;

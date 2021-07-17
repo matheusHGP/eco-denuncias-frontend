@@ -34,9 +34,9 @@ export async function LogIn(login) {
 
   const credentials = login.saveCredentials
     ? {
-        checked: login.saveCredentials,
-        email: login.email,
-      }
+      checked: login.saveCredentials,
+      email: login.email,
+    }
     : { checked: login.saveCredentials };
 
   localStorage.setItem("credentials", JSON.stringify(credentials));
