@@ -13,40 +13,47 @@ import {
 } from "reactstrap";
 import ReactPaginate from "react-paginate";
 import "./styles/styles.css";
+import { useSelector } from "react-redux";
+import * as controller from "./controller/index";
 
 const Reports = () => {
+  const { items } = useSelector((state) => state.occurrences);
+
+  function handleSearch() {
+    controller.get();
+  }
+
   return (
     <>
       <Card className="p-3">
+        <Row className="p-2 float-right">
+          <Col sm={6} md={3}>
+            <Button color="primary" onClick={() => handleSearch()}>
+              Pesquisar
+            </Button>
+          </Col>
+        </Row>
         <Row>
           <Col>
             <Table hover>
               <thead>
                 <tr className="text-center">
-                  <th>#</th>
-                  <th>Munícpe</th>
-                  <th>CPF</th>
+                  <th>Usuário</th>
                   <th>Email</th>
+                  <th>Chapa</th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="text-center">
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr className="text-center">
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr className="text-center">
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
+                  {items.map((item, index) => {
+                    return (
+                      <>
+                        <td key={index}>{item.name}</td>
+                        <td key={index}>{item.email}</td>
+                        <td key={index}>{item.chapa}</td>
+                      </>
+                    );
+                  })}
                 </tr>
               </tbody>
             </Table>

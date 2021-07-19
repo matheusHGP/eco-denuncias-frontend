@@ -6,10 +6,10 @@ import { isAuthenticated } from "../../../util/auth";
 
 import * as actions from "../store/actions";
 
-export async function LogIn(login) {
-  if (!validateEmail(login.email) || login.email === "") {
+export async function logIn(login) {
+  if (login.email === "") {
     actions.invalidLogin("email");
-    notifyWarn("E-mail inválido");
+    notifyWarn("Usuário não pode estar em branco");
     return;
   }
 
@@ -20,11 +20,11 @@ export async function LogIn(login) {
   }
 
   const body = {
-    email: login.email,
+    chapa: login.email,
     password: login.password,
   };
 
-  const data = await api.post("auth", body);
+  const data = await api.post("auth_admin", body);
 
   localStorage.setItem("TOKEN_KEY", data.token);
 
@@ -34,9 +34,9 @@ export async function LogIn(login) {
 
   const credentials = login.saveCredentials
     ? {
-      checked: login.saveCredentials,
-      email: login.email,
-    }
+        checked: login.saveCredentials,
+        email: login.email,
+      }
     : { checked: login.saveCredentials };
 
   localStorage.setItem("credentials", JSON.stringify(credentials));

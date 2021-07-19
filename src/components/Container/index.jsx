@@ -8,8 +8,6 @@ import {
   NavLink,
   NavbarBrand,
   Container,
-  Row,
-  Col,
 } from "reactstrap";
 
 import RoutesPath from "../../routes/routesPath";
@@ -83,11 +81,6 @@ const Navigation = () => {
 };
 
 const CustomContainer = () => {
-  const [sidebar, setSidebar] = useState(false);
-  const expandSidebar = () => setSidebar(!sidebar);
-
-  const handleClickOutside = () => (!sidebar ? expandSidebar() : {});
-
   return (
     <>
       <div
@@ -98,19 +91,11 @@ const CustomContainer = () => {
           flexDirection: "row",
         }}
       >
-        <CustomContainerComponent onClick={handleClickOutside}>
+        <CustomContainerComponent>
           <Navigation />
           <Container>
             <RoutesPath />
           </Container>
-          <Row>
-            <Col>
-              <p>
-                Sistema de controle de ocorrencias do meio ambiente, habitação e
-                urbanismo.
-              </p>
-            </Col>
-          </Row>
         </CustomContainerComponent>
       </div>
     </>

@@ -1,10 +1,8 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React from "react";
 import {
   Button,
-  Card,
   Col,
   Input,
-  Label,
   Modal,
   ModalHeader,
   ModalBody,
@@ -13,8 +11,21 @@ import {
 } from "reactstrap";
 import ReactPaginate from "react-paginate";
 import "./styles/styles.css";
+import { useSelector } from "react-redux";
+import * as controller from "../controller";
+import * as BiIcons from "react-icons/bi";
 
 const Search = () => {
+  const { items } = useSelector((state) => state.users);
+
+  function handleSearch() {
+    controller.get();
+  }
+
+  function handleUpdate() {
+    console.log("teste");
+  }
+
   return (
     <>
       <Modal className="text-center" isOpen={""} toggle={""} backdrop={false}>
@@ -48,37 +59,49 @@ const Search = () => {
           </Button>
         </div>
       </Modal>
-
+      <Row className="p-2 float-right">
+        <Col sm={6} md={3}>
+          <Button color="primary" onClick={() => handleSearch()}>
+            Pesquisar
+          </Button>
+        </Col>
+      </Row>
       <Row>
         <Col>
           <Table hover>
             <thead>
               <tr className="text-center">
-                <th>#</th>
                 <th>Usuário</th>
                 <th>Email</th>
-                <th>Username</th>
+                <th>Chapa</th>
+                <th>Ações</th>
               </tr>
             </thead>
             <tbody>
-              <tr className="text-center">
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr className="text-center">
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr className="text-center">
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
+              {items.map((item, index) => {
+                return (
+                  <>
+                    <tr className="text-center">
+                      <td key={index}>{item.name}</td>
+                      <td key={index}>{item.email}</td>
+                      <td key={index}>{item.chapa}</td>
+                      <td key={index}>
+                        <>
+                          <BiIcons.BiEdit
+                            style={{
+                              fontSize: "1.2rem",
+                              cursor: "pointer",
+                              color: "#C4C7CA",
+                              marginRight: "7px",
+                            }}
+                            onClick={() => handleUpdate(item.original.id)}
+                          />
+                        </>
+                      </td>
+                    </tr>
+                  </>
+                );
+              })}
             </tbody>
           </Table>
         </Col>
@@ -91,7 +114,7 @@ const Search = () => {
             breakLabel={"..."}
             breakClassName={"break-me"}
             initialPage={0}
-            pageCount={10}
+            pageCount={1}
             marginPagesDisplayed={2}
             pageRangeDisplayed={1}
             onPageChange={""}
