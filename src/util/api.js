@@ -12,7 +12,7 @@ const api = {
       return data;
     } catch (error) {
       handleError(error);
-      return { success: false };
+      return error;
     }
   },
   post: async (url, body) => {
@@ -21,7 +21,7 @@ const api = {
       return data;
     } catch (error) {
       handleError(error);
-      return { success: false };
+      return error;
     }
   },
   put: async (url, body) => {
@@ -30,7 +30,7 @@ const api = {
       return data;
     } catch (error) {
       handleError(error);
-      return { success: false };
+      return error;
     }
   },
   delete: async (url) => {
@@ -39,7 +39,7 @@ const api = {
       return data;
     } catch (error) {
       handleError(error);
-      return { success: false };
+      return error;
     }
   },
 };

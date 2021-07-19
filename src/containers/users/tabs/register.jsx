@@ -5,7 +5,7 @@ import * as actions from "../store/actions";
 import * as controller from "../controller/index";
 
 const Register = () => {
-  const { item, invalid } = useSelector((state) => state.users);
+  const { item, invalid, copy } = useSelector((state) => state.users);
 
   function handleUser(id, event) {
     actions.cleanInvalid(id);
@@ -13,7 +13,11 @@ const Register = () => {
   }
 
   function handleSubmit() {
-    controller.create(item);
+    if (!item.id) {
+      controller.create(item);
+    } else {
+      controller.update(item, copy);
+    }
   }
 
   return (

@@ -26,6 +26,10 @@ export async function logIn(login) {
 
   const data = await api.post("auth_admin", body);
 
+  if(data?.response?.status === 400) {
+    return false;
+  }
+
   localStorage.setItem("TOKEN_KEY", data.token);
 
   if (localStorage.getItem("credentials")) {

@@ -13,6 +13,7 @@ import ReactPaginate from "react-paginate";
 import "./styles/styles.css";
 import { useSelector } from "react-redux";
 import * as controller from "../controller";
+import * as actions from "../store/actions";
 import * as BiIcons from "react-icons/bi";
 
 const Search = () => {
@@ -22,8 +23,9 @@ const Search = () => {
     controller.get();
   }
 
-  function handleUpdate() {
-    console.log("teste");
+  function handleUpdate(id) {
+    actions.setActiveTab("Register");
+    controller.getOnly(id);
   }
 
   return (
@@ -94,7 +96,7 @@ const Search = () => {
                               color: "#C4C7CA",
                               marginRight: "7px",
                             }}
-                            onClick={() => handleUpdate(item.original.id)}
+                            onClick={() => handleUpdate(item.id)}
                           />
                         </>
                       </td>
