@@ -72,7 +72,7 @@ const Login = () => {
                     type="email"
                     name="email"
                     id="loginEmail"
-                    placeholder="Digite seu email"
+                    placeholder="Digite seu email / chapa"
                     value={login.email}
                     onChange={(e) => onChangeLogin(e.target.value, "email")}
                     autoComplete="off"

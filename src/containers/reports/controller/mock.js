@@ -1,6 +1,6 @@
 export const data = [
   {
-    number: "123",
+    number: "12346/2021",
     citizen: "Fulano",
     type: "Descarte irregular de resíduos",
     date: "01/04/2021",
@@ -10,7 +10,7 @@ export const data = [
     images: ["foto 1", "foto 2", "foto 3", "foto 4"],
   },
   {
-    number: "1234",
+    number: "12347/2021",
     citizen: "Ciclano",
     type: "Desmatamento",
     date: "26/09/2021",
@@ -20,7 +20,7 @@ export const data = [
     images: ["foto 1", "foto 2", "foto 3", "foto 4"],
   },
   {
-    number: "12345",
+    number: "12348/2021",
     citizen: "Beltrano",
     type: "Loteamento irregular",
     date: "29/10/2021",
@@ -30,7 +30,7 @@ export const data = [
     images: ["foto 1", "foto 2", "foto 3", "foto 4"],
   },
   {
-    number: "321",
+    number: "12349/2021",
     citizen: "Ciclano da Silva",
     type: "Maus tratos contra animais",
     date: "12/11/2021",
@@ -40,7 +40,7 @@ export const data = [
     images: ["foto 1", "foto 2", "foto 3", "foto 4"],
   },
   {
-    number: "12543",
+    number: "12310/2021",
     citizen: "Aeltrano Alves",
     type: "Maus tratos contra animais",
     date: "15/04/2021",
@@ -50,7 +50,7 @@ export const data = [
     images: ["foto 1", "foto 2", "foto 3", "foto 4"],
   },
   {
-    number: "34543",
+    number: "12311/2021",
     citizen: "Fulano Dias",
     type: "Desmatamento",
     date: "27/08/2021",
