@@ -2,7 +2,6 @@ import api from "../../../util/api";
 import {
   notifyWarn,
   notifySuccess,
-  notifyInfo,
 } from "../../../components/Message/index";
 import * as actions from "../store/actions";
 

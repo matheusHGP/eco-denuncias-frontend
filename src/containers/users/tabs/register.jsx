@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import { Col, Form, FormGroup, Input, Label, Row, Button } from "reactstrap";
 import * as actions from "../store/actions";

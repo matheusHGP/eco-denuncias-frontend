@@ -1,6 +1,5 @@
 import history from "../../../util/history";
 import api from "../../../util/api";
-import { validateEmail } from "../../../util/validations";
 import { notifyWarn } from "../../../components/Message/index";
 import { isAuthenticated } from "../../../util/auth";
 
